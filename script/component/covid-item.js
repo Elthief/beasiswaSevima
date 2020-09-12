@@ -10,10 +10,13 @@ class CovidItem extends HTMLElement {
       <style>
       .card-deck {
        max-width: 50%;
-
+       margin: auto;
+        margin-top: 20px;
+      }
+       .card-body {
+        text-align: center;
       }
       
-
       </style>  
     
       <div class="card-deck">

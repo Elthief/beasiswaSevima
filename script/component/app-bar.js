@@ -1,11 +1,11 @@
 class AppBar extends HTMLElement {
 
-    connectedCallback() {
-        this.render();
-    }
+  connectedCallback() {
+    this.render();
+  }
 
-    render() {
-        this.innerHTML = `            
+  render() {
+    this.innerHTML = `            
             <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
   <a class="navbar-brand" href="#">Home</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,7 +22,7 @@ class AppBar extends HTMLElement {
 </nav>
             
             `;
-    }
+  }
 }
 
 customElements.define("app-bar", AppBar);
