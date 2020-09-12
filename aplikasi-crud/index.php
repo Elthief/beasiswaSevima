@@ -19,6 +19,10 @@ $buku = query("SELECT * FROM buku ORDER BY judul ASC");
 <body>
     <h1>Daftar Buku di Perpustakaan Madani</h1>
 
+    <a href="crud/tambah.php">
+        <button type="button" class="btn btn-primary">Tambah Data Buku</button>
+    </a>
+
      <div class="container col-lg-6" id="container">
         <?php $i = 1 ?>
         <?php foreach($buku as $bk) : ?>
