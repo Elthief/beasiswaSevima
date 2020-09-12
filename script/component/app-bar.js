@@ -13,7 +13,7 @@ class AppBar extends HTMLElement {
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="./index.html">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link active" href="./index.html">Beranda<span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href="./rumahsakit.php">Rumah Sakit Rujukan</a>
     </div>
   </div>
