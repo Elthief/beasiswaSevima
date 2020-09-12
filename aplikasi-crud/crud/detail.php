@@ -1,8 +1,10 @@
 <?php
 
-require 'functions/functions.php';
+require '../functions/functions.php';
 
-$buku = query("SELECT * FROM buku ORDER BY judul ASC");
+$id = $_GET["id"];
+
+$bk = query("SELECT * FROM buku WHERE id = $id")[0];
 
 
 ?>
@@ -17,22 +19,20 @@ $buku = query("SELECT * FROM buku ORDER BY judul ASC");
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
-    <h1>Daftar Buku di Perpustakaan Madani</h1>
+    <h1>Detail Buku</h1>
 
-     <div class="container col-lg-6" id="container">
-        <?php $i = 1 ?>
-        <?php foreach($buku as $bk) : ?>
-        <ul class="list-group">          
-            <li class="list-group-item">
-                <?= $i; ?> |
-                <?= $bk["judul"]; ?>
-                <a href="#" class="badge badge-danger float-right ml-1" onclick="return confirm('Anda yakin ingin menghapus data buku <?= $bk["judul"]; ?> ?')">hapus</a>
-                <a href="#" class="badge badge-success float-right ml-1" >Ubah</a>
-                <a href="crud/detail.php?id=<?= $bk["id"]; ?>" class="badge badge-primary float-right ml-1">detail</a>
-            </li>
-        </ul>
-        <?php $i++; ?>
-        <?php endforeach; ?>
+        
+    <div class="container mt-5">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title"><?= $bk["judul"]; ?></h5>
+                <h6 class="card-subtitle mb-2 text-muted"><?= $bk["isbn"]; ?></h6>
+                <p class="card-text"><?= $bk["tahun_terbit"]; ?></p>
+                <p class="card-text"><?= $bk["pengarang"]; ?></p>
+                <p class="card-text"><?= $bk["penerbit"]; ?></p>
+                <a href="../index.php" class="card-link">Kembali</a>
+        </div>
+        </div>
     </div>
     
 
