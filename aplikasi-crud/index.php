@@ -4,6 +4,9 @@ require 'functions/functions.php';
 
 $buku = query("SELECT * FROM buku ORDER BY judul ASC");
 
+if(isset($_POST["cari"])) {
+    $buku = cari($_POST["keyword"]);
+}
 
 ?>
 
@@ -22,6 +25,12 @@ $buku = query("SELECT * FROM buku ORDER BY judul ASC");
     <a href="crud/tambah.php">
         <button type="button" class="btn btn-primary">Tambah Data Buku</button>
     </a>
+
+    <form class="form-inline" action="" method="post">
+        <input class="form-control mr-sm-2" name="keyword" id="keyword" type="text" size="50" placeholder="Cari Buku" aria-label="Search" autofocus>
+        <button class="btn btn-outline-success my-2 my-sm-0" name="cari" id="tombol-cari" type="submit">Cari</button>
+        <img src="" alt="" class="loader">
+    </form>
 
      <div class="container col-lg-6" id="container">
         <?php $i = 1 ?>
