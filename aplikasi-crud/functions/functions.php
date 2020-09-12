@@ -35,3 +35,26 @@ function hapus($id) {
 
     return mysqli_affected_rows($conn);
 }
+
+function ubah($data) {
+    global $conn;
+
+    $id = $data["id"];
+    $judul = htmlspecialchars($data["judul"]);
+    $isbn = htmlspecialchars($data["isbn"]);
+    $tahun_terbit = htmlspecialchars($data["tahun_terbit"]);
+    $pengarang = htmlspecialchars($data["pengarang"]);
+    $penerbit = htmlspecialchars($data["penerbit"]);
+
+    $query = "UPDATE buku SET 
+            judul = '$judul',
+            isbn = '$isbn',
+            tahun_terbit = '$tahun_terbit',
+            pengarang = '$pengarang',
+            penerbit = '$penerbit'
+            WHERE id = $id ";
+
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}

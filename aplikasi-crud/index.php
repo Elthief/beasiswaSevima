@@ -31,7 +31,7 @@ $buku = query("SELECT * FROM buku ORDER BY judul ASC");
                 <?= $i; ?> |
                 <?= $bk["judul"]; ?>
                 <a href="crud/hapus.php?id=<?= $bk["id"]; ?>" class="badge badge-danger float-right ml-1" onclick="return confirm('Anda yakin ingin menghapus data buku <?= $bk["judul"]; ?> ?')">hapus</a>
-                <a href="#" class="badge badge-success float-right ml-1" >Ubah</a>
+                <a href="crud/ubah.php?id=<?= $bk["id"]; ?>" class="badge badge-success float-right ml-1" >Ubah</a>
                 <a href="crud/detail.php?id=<?= $bk["id"]; ?>" class="badge badge-primary float-right ml-1">detail</a>
             </li>
         </ul>

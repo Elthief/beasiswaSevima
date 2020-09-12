@@ -30,7 +30,9 @@ $bk = query("SELECT * FROM buku WHERE id = $id")[0];
                 <p class="card-text"><?= $bk["tahun_terbit"]; ?></p>
                 <p class="card-text"><?= $bk["pengarang"]; ?></p>
                 <p class="card-text"><?= $bk["penerbit"]; ?></p>
-                <a href="../index.php" class="card-link">Kembali</a>
+                <a href="../index.php">
+                    <button type="button" name="button" class="btn btn-primary">Kembali</button>
+                </a>
         </div>
         </div>
     </div>

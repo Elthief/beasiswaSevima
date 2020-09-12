@@ -2,18 +2,23 @@
 
 require '../functions/functions.php';
 
+$id = $_GET["id"];
+
+$bk = query("SELECT * FROM buku WHERE id = $id")[0];
+
+
 if(isset($_POST["submit"])) {
     if(tambah($_POST) > 0) {
         echo "
             <script>
-                alert('Data berhasil ditambahkan!');
+                alert('Data berhasil diubah!');
                 document.location.href = '../index.php';
             </script>
             ";
     } else {
         echo "
             <script>
-                alert('Data gagal ditambahkan!');
+                alert('Data gagal diubah!');
                 document.location.href = '../index.php';
             </script>
             ";
@@ -46,26 +51,26 @@ if(isset($_POST["submit"])) {
     <h1>Tambah Data Buku</h1>
 
     <form action="" method="post">
-    
+        <input type="hidden" name="id" id="id" value="<?= $bk["id"]; ?>">
         <div div class="form-group">
             <label for="judul">Judul</label>
-            <input type="text" name="judul" name="judul" class="form-control" id="judul" required>
+            <input type="text" name="judul" name="judul" class="form-control" id="judul" value="<?= $bk["judul"]; ?>" required>
         </div>
             <div div class="form-group">
             <label for="isbn">ISBN</label>
-            <input type="number" name="isbn" class="form-control" id="isbn" required>
+            <input type="number" name="isbn" class="form-control" id="isbn" value="<?= $bk["isbn"]; ?>" required>
         </div>
             <div div class="form-group">
             <label for="tahun_terbit">Tahun Terbit</label>
-            <input type="number" name="tahun_terbit" class="form-control" id="tahun_terbit" required>
+            <input type="number" name="tahun_terbit" class="form-control" id="tahun_terbit" value="<?= $bk["tahun_terbit"]; ?>" required>
         </div>
             <div div class="form-group">
             <label for="pengarang">Pengarang</label>
-            <input type="text" name="pengarang" class="form-control" id="pengarang" required>
+            <input type="text" name="pengarang" class="form-control" id="pengarang" value="<?= $bk["pengarang"]; ?>" required>
         </div>
             <div div class="form-group">
             <label for="penerbit">Penerbit</label>
-            <input type="text" name="penerbit" class="form-control" id="penerbit" required>
+            <input type="text" name="penerbit" class="form-control" id="penerbit" value="<?= $bk["penerbit"]; ?>" required>
         </div>
 
         <button type="submit" name="submit" class="btn btn-primary">Tambah Data</button>
