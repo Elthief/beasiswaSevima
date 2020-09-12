@@ -1,5 +1,9 @@
 <?php
 
+require 'functions/functions.php';
+
+$buku = query("SELECT * FROM buku ORDER BY judul ASC");
+
 
 ?>
 
@@ -13,6 +17,23 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
+    <h1>Daftar Buku di Perpustakaan Madani</h1>
+
+     <div class="container col-lg-6" id="container">
+        <?php $i = 1 ?>
+        <?php foreach($buku as $bk) : ?>
+        <ul class="list-group">          
+            <li class="list-group-item">
+                <?= $i; ?> |
+                <?= $bk["judul"]; ?>
+                <a href="#" class="badge badge-danger float-right ml-1" onclick="return confirm('Anda yakin ingin menghapus data buku <?= $bk["judul"]; ?> ?')">hapus</a>
+                <a href="#" class="badge badge-success float-right ml-1" >Ubah</a>
+                <a href="#" class="badge badge-primary float-right ml-1">detail</a>
+            </li>
+        </ul>
+        <?php $i++; ?>
+        <?php endforeach; ?>
+    </div>
     
 
 
