@@ -34,8 +34,9 @@ if(isset($_POST["submit"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah Data Buku</title>
+    <title>Ubah Data Buku</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style/style.css">
     <style>
         * {
             margin: 3px;
@@ -48,7 +49,7 @@ if(isset($_POST["submit"])) {
     </style>
 </head>
 <body>
-    <h1>Tambah Data Buku</h1>
+    <h1>Ubah Data Buku</h1>
 
     <form action="" method="post">
         <input type="hidden" name="id" id="id" value="<?= $bk["id"]; ?>">

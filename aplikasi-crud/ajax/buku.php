@@ -14,7 +14,7 @@ $buku = query($query);
 
 ?>
 
-<div class="container col-lg-6" id="container">
+<div class="container " id="container">
         <?php $i = 1 ?>
         <?php foreach($buku as $bk) : ?>
         <ul class="list-group">          

@@ -16,8 +16,13 @@ if(isset($_POST["cari"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buku Perpustakaan</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        h1 {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <h1>Daftar Buku di Perpustakaan Madani</h1>
@@ -25,13 +30,13 @@ if(isset($_POST["cari"])) {
     <a href="crud/tambah.php">
         <button type="button" class="btn btn-primary">Tambah Data Buku</button>
     </a>
-
+    <br>
     <form class="form-inline" action="" method="post">
         <input class="form-control mr-sm-2" name="keyword" id="keyword" type="text" size="50" placeholder="Cari Buku" aria-label="Search" autofocus>
         <button class="btn btn-outline-success my-2 my-sm-0" name="cari" id="tombol-cari" type="submit">Cari</button>
         <img src="./img/loader.gif" alt="" class="loader">
     </form>
-
+    <br>
      <div class="container col-lg-6" id="container">
         <?php $i = 1 ?>
         <?php foreach($buku as $bk) : ?>

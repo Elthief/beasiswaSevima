@@ -17,6 +17,12 @@ $bk = query("SELECT * FROM buku WHERE id = $id")[0];
     <title>Buku Perpustakaan</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style/style.css">
+    <style>
+        .card-body {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <h1>Detail Buku "<?= $bk["judul"]; ?>"</h1>
