@@ -29,7 +29,7 @@ if(isset($_POST["cari"])) {
     <form class="form-inline" action="" method="post">
         <input class="form-control mr-sm-2" name="keyword" id="keyword" type="text" size="50" placeholder="Cari Buku" aria-label="Search" autofocus>
         <button class="btn btn-outline-success my-2 my-sm-0" name="cari" id="tombol-cari" type="submit">Cari</button>
-        <img src="" alt="" class="loader">
+        <img src="./img/loader.gif" alt="" class="loader">
     </form>
 
      <div class="container col-lg-6" id="container">
@@ -61,6 +61,7 @@ if(isset($_POST["cari"])) {
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
     <script src="./js/jquery-3.5.1.min.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 </html>
 
